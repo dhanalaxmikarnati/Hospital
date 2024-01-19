@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient List</title>
+</head>
+<body>
+    <h1>List of Patients</h1>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.name }} - Assigned Doctor: {{ patient.assigned_doctor.name }}</li>
+            <!-- Display other patient information as needed -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

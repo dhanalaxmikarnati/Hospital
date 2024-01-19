@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Appointment</title>
+    <!-- Add your CSS links or stylesheets here -->
+    <link rel="stylesheet" href="{% static 'styles/appointments.css' %}">
+</head>
+<body>
+    <h1>Create Appointment</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <!-- Doctor Selection -->
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" name="doctor">
+            {% for doctor in doctors %}
+                <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <!-- Link to Enter Patient Details -->
+        {% comment %} <p><a href="{% url 'patient' %}">Enter Patient Details</a></p> {% endcomment %}
+        
+        <!-- Patient Details -->
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="patient_age">Patient Age:</label>
+        <input type="text" id="patient_age" name="age"><br><br>
+        
+        <label for="patient_email">Patient Email:</label>
+        <input type="email" id="patient_email" name="email"><br><br>
+        
+        <label for="patient_contact">Contact Number:</label>
+        <input type="text" id="patient_contact" name="contact_number"><br><br>
+        
+        <label for="patient_problems">Health Problems:</label>
+        <textarea id="patient_problems" name="problems"></textarea><br><br>
+        
+        <!-- Appointment Details -->
+        <label for="appointment_time">Appointment Time:</label>
+        <input type="datetime-local" id="appointment_time" name="appointment_time"><br><br>
+        
+        <input type="submit" value="Create Appointment">
+    </form>
+</body>
+</html>

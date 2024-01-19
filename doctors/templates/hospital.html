@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="{% static 'styles/hospital.css' %}">
+    <!-- Link to the static CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#patients">Patients</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#appointments">Appointments</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    <main>
+        <section id="patients">
+            <h2>Patients</h2>
+            <div class="patient-list">
+                <!-- Display patient-related information, tables, forms, etc. -->
+            </div>
+        </section>
+        <section id="doctors">
+            <h2>Doctors</h2>
+            <div class="doctor-list">
+                <!-- Display doctor-related information, tables, forms, etc. -->
+            </div>
+        </section>
+        <section id="appointments">
+            <h2>Appointments</h2>
+            <div class="appointment-schedule">
+                <!-- Display appointment-related information, tables, forms, etc. -->
+            </div>
+        </section>
+        <!-- Add more sections for other functionalities -->
+    </main>
+    <footer>
+        <p>&copy; 2023 Hospital Management System</p>
+    </footer>
+</body>
+</html>
